@@ -42,3 +42,6 @@ keymap('n', '<leader>F', '<cmd>call VSCodeNotify("editor.action.formatDocument")
 -- Normal modeとVisual modeでspace+enterでコンテキストメニューを表示
 vim.keymap.set('n', '<Leader><CR>', '<cmd>call VSCodeNotify("editor.action.showContextMenu")<CR>')
 vim.keymap.set('v', '<Leader><CR>', '<cmd>call VSCodeNotify("editor.action.showContextMenu")<CR>')
+
+-- Source Control パネルを開く
+keymap('n', '<leader>g', '<cmd>call VSCodeNotify("workbench.view.scm")<CR>')
