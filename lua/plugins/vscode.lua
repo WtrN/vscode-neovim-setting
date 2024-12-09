@@ -45,3 +45,11 @@ keymap('v', '<Leader><CR>', '<cmd>call VSCodeNotify("editor.action.showContextMe
 
 -- Source Control パネルを開く
 keymap('n', '<leader>g', '<cmd>call VSCodeNotify("workbench.view.scm")<CR>')
+
+-- Insert mode終了時に自動保存
+vim.api.nvim_create_autocmd("InsertLeave", {
+  pattern = "*",
+  callback = function()
+    vim.fn.VSCodeNotify("workbench.action.files.save")
+  end
+})
